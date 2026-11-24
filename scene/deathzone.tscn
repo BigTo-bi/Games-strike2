@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dcq60fee050vx"]
+
+[ext_resource type="Script" uid="uid://d1paajfiykiyb" path="res://script/deathzone.gd" id="1_8i31u"]
+
+[node name="Deathzone" type="Area2D" unique_id=1724969563]
+collision_layer = 8
+script = ExtResource("1_8i31u")
+
+[node name="Timer" type="Timer" parent="." unique_id=314174054]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
